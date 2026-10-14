@@ -229,7 +229,7 @@ export const defaultContent: SiteContent = {
     name: '필라이브필라테스 강남일원점',
     en: 'PILIVE PILATES GANGNAM ILWON',
     address: '',
-    url: '',
+    url: 'https://m.booking.naver.com/booking/13/bizes/962448/items/8132716?area=pll&lang=ko&theme=place',
   },
   footerNote: '체형분석 결과는 운동 방향 설정을 위한 참고 자료이며, 의료적 진단을 대신하지 않습니다.',
 };
