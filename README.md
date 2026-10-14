@@ -1,5 +1,8 @@
 # PILIVE BODY CARE SYSTEM — 필라이브필라테스 강남일원점
 
+- 공개 주소: https://pilive-pilates-gangnam-ilwon.vercel.app
+- 관리자: https://pilive-pilates-gangnam-ilwon.vercel.app/admin
+
 - 사이트: Next.js (App Router) + TypeScript
 - 콘텐츠·이미지 저장: Vercel Blob (이 프로젝트 전용 저장소)
 - 관리자 페이지: `/admin` (비밀번호 로그인)
