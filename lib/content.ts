@@ -115,7 +115,7 @@ export const defaultContent: SiteContent = {
       eyebrow: 'The Check-up',
       title: '화면을 따라 움직이는 것만으로,\n나의 몸이 기록됩니다.',
       body: '피트릭스 3D 체형분석 시스템의 화면 안내에 따라 간단한 동작을 하면 측정이 진행됩니다. 복잡한 준비 없이 셀프로 측정하고, 평소 알아차리기 어려웠던 몸의 특징이 3D로 기록됩니다.',
-      image: '',
+      image: '/images/checkup.webp',
       imageAlt: '필라이브필라테스 강남일원점의 피트릭스 3D 체형분석 기기',
       stats: [
         { value: '70', label: '측정 항목' },
@@ -165,8 +165,8 @@ export const defaultContent: SiteContent = {
       body2:
         '담당 강사는 이 결과를 기준으로 수업을 설계합니다. 결과에 맞춘 추천 운동도 바로 확인할 수 있고, 리포트는 카카오톡으로 받아볼 수 있습니다.',
       note: '화면의 수치는 이해를 돕기 위한 예시입니다.',
-      image: '',
-      imageAlt: '체형분석 기기 화면에 표시된 측정 결과',
+      image: '/images/report.webp',
+      imageAlt: '필라이브필라테스 강남일원점 체형분석 기기에 표시된 아웃바디 에이지 결과 화면',
       items: [
         { label: 'POSTURE', title: '자세 정렬' },
         { label: 'BODY AGE', title: '지금, 내 몸의 나이' },
