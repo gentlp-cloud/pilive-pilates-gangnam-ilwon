@@ -124,11 +124,23 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
 
     case 'band':
       return (
-        <section className="band" id={s.id} key={s.id}>
+        <section className="bgsec band-full" id={s.id} key={s.id}>
+          {s.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="bg-img" src={s.image} alt={s.imageAlt ?? ''} loading="lazy" />
+          ) : null}
+          <div className="shade" aria-hidden="true" />
           <div className="wrap">
-            <Head s={s} />
-            <div className="band-photo reveal">
-              <Photo src={s.image} alt={s.imageAlt} />
+            <div className="sec-head reveal" style={{ marginBottom: 0 }}>
+              <p className="eyebrow">{s.eyebrow}</p>
+              <h2>
+                <Rich text={s.title} />
+              </h2>
+              {s.body ? (
+                <p className="lead">
+                  <Rich text={s.body} />
+                </p>
+              ) : null}
             </div>
           </div>
         </section>
@@ -450,7 +462,14 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
 
     case 'cta':
       return (
-        <section className="cta" id={s.id} key={s.id}>
+        <section className={s.image ? 'cta bgsec cta-bg' : 'cta'} id={s.id} key={s.id}>
+          {s.image ? (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="bg-img" src={s.image} alt={s.imageAlt ?? ''} loading="lazy" />
+              <div className="shade" aria-hidden="true" />
+            </>
+          ) : null}
           <div className="wrap">
             <p className="eyebrow reveal">{s.eyebrow}</p>
             <h2 className="reveal" style={{ marginTop: 22 }}>
@@ -522,7 +541,14 @@ export default function Landing({ content }: { content: SiteContent }) {
       </header>
 
       <main id="home">
-        <section className="hero">
+        <section className={c.hero.image ? 'hero hero-bg' : 'hero'}>
+          {c.hero.image ? (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="bg-img" src={c.hero.image} alt={c.hero.imageAlt} fetchPriority="high" />
+              <div className="shade" aria-hidden="true" />
+            </>
+          ) : null}
           <div className="wrap">
             <div className="hero-copy">
               <p className="eyebrow">{c.hero.eyebrow}</p>
@@ -540,22 +566,13 @@ export default function Landing({ content }: { content: SiteContent }) {
                   </a>
                 ) : null}
               </div>
-              <div className="scroll-cue" aria-hidden="true">
-                <i />
-                SCROLL
-              </div>
+              {c.hero.badgeBig ? (
+                <p className="hero-badge">
+                  <small>{c.hero.badgeSmall}</small>
+                  <strong>{c.hero.badgeBig}</strong>
+                </p>
+              ) : null}
             </div>
-            <figure className="hero-figure reveal" style={{ margin: 0 }}>
-                <div className="arch">
-                  <Photo src={c.hero.image} alt={c.hero.imageAlt} eager />
-                </div>
-                {c.hero.badgeBig ? (
-                  <figcaption>
-                    <small>{c.hero.badgeSmall}</small>
-                    <strong>{c.hero.badgeBig}</strong>
-                  </figcaption>
-                ) : null}
-              </figure>
           </div>
         </section>
 
