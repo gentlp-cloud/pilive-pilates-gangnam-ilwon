@@ -150,7 +150,7 @@ export const defaultContent: SiteContent = {
         { src: '/images/process/step5.webp', caption: '매트 위에 올라서기' },
         { src: '/images/process/step6.webp', caption: '화면을 따라 동작하기' },
         { src: '/images/process/step7.webp', caption: '유연성 동작 측정' },
-        { src: '/images/process/step8.webp', caption: '정지 자세 3D 스캔' },
+        { src: '/images/process/step8.webp', caption: '자세 측정 동작' },
       ],
     },
     {
@@ -190,7 +190,7 @@ export const defaultContent: SiteContent = {
         '담당 강사는 이 결과를 기준으로 수업을 설계합니다. 결과에 맞춘 추천 운동도 바로 확인할 수 있고, 리포트는 카카오톡으로 받아볼 수 있습니다.',
       note: '화면의 수치는 이해를 돕기 위한 예시입니다.',
       image: '/images/report.webp',
-      imageAlt: '필라이브필라테스 강남일원점 체형분석 기기에 표시된 아웃바디 에이지 결과 화면',
+      imageAlt: '필라이브필라테스 강남일원점 체형분석 기기가 정지 자세를 3D로 스캔하는 화면',
       items: [
         { label: 'POSTURE', title: '자세 정렬' },
         { label: 'BODY AGE', title: '지금, 내 몸의 나이' },
