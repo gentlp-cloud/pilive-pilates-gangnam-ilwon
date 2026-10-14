@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition, type ChangeEvent, type ReactNode } from 'react';
-import type { Item, Section, SiteContent, Stat } from '@/lib/content';
+import type { Item, Photo, Section, SiteContent, Stat } from '@/lib/content';
 import { logout, saveSite, uploadImage } from './actions';
 
 type Status = { kind: 'idle' | 'ok' | 'err' | 'dirty'; text: string };
@@ -283,6 +283,7 @@ export default function AdminEditor({ initial, storageOk }: { initial: SiteConte
                   </div>
                 </div>
               ) : null}
+              {s.gallery ? <GalleryEditor sectionId={s.id} photos={s.gallery} onChange={(fn) => set((x) => fn(x.gallery!))} /> : null}
               {s.items && s.type !== 'report' ? (
                 <ItemsEditor sectionId={s.id} type={s.type} items={s.items} onChange={(fn) => set((x) => fn(x.items!))} />
               ) : null}
@@ -401,6 +402,59 @@ function ItemsEditor({
           onClick={() => onChange((a) => void a.push(hasBody ? { title: '', body: '', ...(hasLabel ? { label: '' } : {}) } : { title: '' }))}
         >
           + 항목 추가
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function GalleryEditor({
+  sectionId,
+  photos,
+  onChange,
+}: {
+  sectionId: string;
+  photos: Photo[];
+  onChange: (fn: (photos: Photo[]) => void) => void;
+}) {
+  return (
+    <div className="field">
+      <span>측정 과정 사진</span>
+      <div className="sub-list">
+        {photos.map((ph, k) => (
+          <div className="sub-item" key={k}>
+            <header>
+              <span>{k + 1}번 사진</span>
+              <div className="sec-tools">
+                <button
+                  type="button"
+                  className="adm-btn small"
+                  disabled={k === 0}
+                  onClick={() => onChange((a) => void ([a[k - 1], a[k]] = [a[k], a[k - 1]]))}
+                >
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  className="adm-btn small"
+                  disabled={k === photos.length - 1}
+                  onClick={() => onChange((a) => void ([a[k + 1], a[k]] = [a[k], a[k + 1]]))}
+                >
+                  ↓
+                </button>
+                <button type="button" className="adm-btn small danger" onClick={() => onChange((a) => void a.splice(k, 1))}>
+                  삭제
+                </button>
+              </div>
+            </header>
+            <ImageField id={`${sectionId}-g-${k}`} label="사진" value={ph.src} onChange={(v) => onChange((a) => (a[k].src = v))} />
+            <Field id={`${sectionId}-gc-${k}`} label="사진 설명" value={ph.caption} onChange={(v) => onChange((a) => (a[k].caption = v))} />
+          </div>
+        ))}
+      </div>
+      <div>
+        <button type="button" className="adm-btn small" onClick={() => onChange((a) => void a.push({ src: '', caption: '' }))}>
+          + 사진 추가
         </button>
       </div>
     </div>

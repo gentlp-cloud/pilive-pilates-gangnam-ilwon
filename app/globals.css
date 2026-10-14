@@ -317,3 +317,20 @@ footer .note{border-top:1px solid var(--line);padding-top:22px;line-height:1.8}
 .ph span{font-family:var(--f-latin);font-size:22px;letter-spacing:.4em;color:rgba(42,40,37,.28)}
 .studios-grid.single{grid-template-columns:1fr!important;max-width:720px}
 .studio-name .addr{font-size:14px;color:var(--muted);margin-top:4px}
+
+/* studio band & photos */
+.band{padding-top:0}
+.band-photo{aspect-ratio:16/9;max-width:100%;border-radius:4px;overflow:hidden;background:var(--sand)}
+.band-photo img{width:100%;height:100%;object-fit:cover}
+.location-photo{margin-bottom:36px}
+/* check-up process strip */
+.process{margin-top:clamp(56px,9vw,96px);display:grid;gap:22px}
+.process-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch}
+.process-track figure{flex:0 0 min(62vw,230px);margin:0;scroll-snap-align:start;display:grid;gap:12px}
+.process-photo{aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:var(--sand)}
+.process-photo img{width:100%;height:100%;object-fit:cover}
+.process-track figcaption{display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:1.5}
+.process-track figcaption .num{color:var(--gold);font-size:15px}
+.process-track::-webkit-scrollbar{height:4px}
+.process-track::-webkit-scrollbar-thumb{background:var(--stone);border-radius:4px}
+@media (min-width:980px){.band-photo{aspect-ratio:21/9}}

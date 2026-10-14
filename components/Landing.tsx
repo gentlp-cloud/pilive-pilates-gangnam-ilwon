@@ -122,6 +122,18 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
         </section>
       );
 
+    case 'band':
+      return (
+        <section className="band" id={s.id} key={s.id}>
+          <div className="wrap">
+            <Head s={s} />
+            <div className="band-photo reveal">
+              <Photo src={s.image} alt={s.imageAlt} />
+            </div>
+          </div>
+        </section>
+      );
+
     case 'system':
       return (
         <section className="system" id={s.id} key={s.id}>
@@ -159,6 +171,7 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
             </div>
             <div>
               <Head s={s} style={{ marginBottom: 0 }} />
+              {s.gallery?.length ? null : (
               <div className="moves reveal" aria-label="측정 동작">
                 <div className="move">
                   <svg viewBox="0 0 44 52" aria-hidden="true">
@@ -182,6 +195,7 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
                   앞으로 숙이기
                 </div>
               </div>
+              )}
               {s.stats?.length ? (
                 <div className="stat-row reveal">
                   {s.stats.map((st, i) => (
@@ -208,6 +222,24 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
               </div>
             </div>
           </div>
+          {s.gallery?.length ? (
+            <div className="wrap process reveal">
+              <p className="eyebrow">Check-up Process</p>
+              <div className="process-track" role="list">
+                {s.gallery.map((g, i) => (
+                  <figure key={i} role="listitem">
+                    <div className="process-photo">
+                      <Photo src={g.src} alt={g.caption} />
+                    </div>
+                    <figcaption>
+                      <span className="num">{String(i + 1).padStart(2, '0')}</span>
+                      {g.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </section>
       );
 
@@ -397,6 +429,11 @@ function renderSection(s: Section, c: SiteContent): ReactNode {
         <section className="studios" id={s.id} key={s.id}>
           <div className="wrap">
             <Head s={s} />
+            {s.image ? (
+              <div className="band-photo location-photo reveal">
+                <Photo src={s.image} alt={s.imageAlt} />
+              </div>
+            ) : null}
             <div className="studios-grid single">
               <div className="studio">
                 <div className="studio-name">

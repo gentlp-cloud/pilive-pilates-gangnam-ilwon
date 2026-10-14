@@ -3,9 +3,11 @@
 
 export type Item = { label?: string; title: string; body?: string };
 export type Stat = { value: string; unit?: string; label: string };
+export type Photo = { src: string; caption: string };
 
 export type SectionType =
   | 'question'
+  | 'band'
   | 'system'
   | 'checkup'
   | 'trust'
@@ -29,6 +31,7 @@ export type Section = {
   imageAlt?: string;
   items?: Item[];
   stats?: Stat[];
+  gallery?: Photo[];
 };
 
 export type Location = { name: string; en: string; address: string; url: string };
@@ -93,6 +96,17 @@ export const defaultContent: SiteContent = {
       ],
     },
     {
+      id: 'studio',
+      type: 'band',
+      name: '스튜디오 사진',
+      visible: true,
+      eyebrow: 'The Studio',
+      title: '오늘도, 더 건강한 나를\n만나는 시간.',
+      body: '자연광이 드는 필라이브필라테스 강남일원점에서 한 사람의 움직임에 집중합니다.',
+      image: '/images/lobby.webp',
+      imageAlt: '필라이브필라테스 강남일원점 입구와 기구 필라테스 룸',
+    },
+    {
       id: 'system',
       type: 'system',
       name: '체형관리 시스템',
@@ -127,6 +141,16 @@ export const defaultContent: SiteContent = {
         { title: '체형', body: '틀어진 자세와 균형을 3D로 분석합니다' },
         { title: '근육과 관절 기능', body: '동작으로 근육과 관절의 불균형을 살핍니다' },
         { title: '부상 위험 경향', body: '체형과 기능을 종합해 주의할 부위를 확인합니다' },
+      ],
+      gallery: [
+        { src: '/images/process/step1.webp', caption: 'QR 코드로 로그인' },
+        { src: '/images/process/step2.webp', caption: '360° 웰니스 바디 검사 시작' },
+        { src: '/images/process/step3.webp', caption: '측정 준비사항 확인' },
+        { src: '/images/process/step4.webp', caption: '3가지 운동검사 안내' },
+        { src: '/images/process/step5.webp', caption: '매트 위에 올라서기' },
+        { src: '/images/process/step6.webp', caption: '화면을 따라 동작하기' },
+        { src: '/images/process/step7.webp', caption: '유연성 동작 측정' },
+        { src: '/images/process/step8.webp', caption: '정지 자세 3D 스캔' },
       ],
     },
     {
@@ -212,6 +236,8 @@ export const defaultContent: SiteContent = {
       eyebrow: 'Visit Us',
       title: '필라이브필라테스\n강남일원점에서 시작하세요.',
       body: '상담부터 측정, 수업과 재측정까지 강남일원점에서 한 사람의 변화를 꼼꼼하게 살핍니다.',
+      image: '/images/studio-wide.webp',
+      imageAlt: '필라이브필라테스 강남일원점 기구 필라테스 룸 전경',
     },
     {
       id: 'cta',
