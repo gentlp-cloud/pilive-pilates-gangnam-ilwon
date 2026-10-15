@@ -198,7 +198,7 @@ export default function ZoomViewer({
       role="dialog"
       aria-modal="true"
       aria-label={title ?? alt}
-      className="fixed inset-0 z-[100] flex flex-col bg-[#101a16]/95 text-cream"
+      className="fixed inset-0 z-[100] flex flex-col bg-[#101a16] text-cream"
     >
       <div className="flex items-center justify-between gap-3 px-4 pt-[max(12px,env(safe-area-inset-top))] pb-3">
         <p className="truncate text-sm text-cream/80">{title ?? alt}</p>
@@ -257,7 +257,7 @@ export default function ZoomViewer({
             setS(1);
             setT({ x: 0, y: 0 });
           }}
-          className="h-11 min-w-20 rounded-full bg-white/10 px-4 text-sm tabular-nums hover:bg-white/20"
+          className="h-11 min-w-20 rounded-full bg-white/10 px-4 text-sm lining-nums tabular-nums hover:bg-white/20"
           aria-label="원래 크기로"
         >
           {Math.round(s * 100)}%

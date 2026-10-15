@@ -120,7 +120,7 @@ export default function Header({ nav, bookingUrl, bookingLabel }: { nav: NavItem
               onClick={() => setOpen(false)}
               className="flex items-baseline gap-4 border-b border-line py-5 font-display text-[21px] text-green"
             >
-              <span className="font-latin text-sm text-gold tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+              <span className="font-latin text-sm text-gold lining-nums tabular-nums">{String(i + 1).padStart(2, '0')}</span>
               {n.label}
             </NavLink>
           ))}

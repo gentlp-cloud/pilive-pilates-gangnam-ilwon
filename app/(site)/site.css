@@ -34,9 +34,12 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
     word-break: keep-all;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
+  }
+  .font-latin {
+    font-variant-numeric: lining-nums;
   }
   h1,
   h2,

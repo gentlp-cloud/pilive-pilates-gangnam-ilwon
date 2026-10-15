@@ -69,7 +69,7 @@ export default function Schedule({ image, alt, classes }: { image: string; alt: 
           <ul className="grid gap-2 sm:grid-cols-2">
             {filtered.map((c, i) => (
               <li key={`${c.day}-${c.time}-${c.name}-${i}`} className="flex items-center justify-between rounded-lg bg-white px-4 py-3 text-sm">
-                <span className="tabular-nums text-muted">
+                <span className="lining-nums tabular-nums text-muted">
                   {c.day} {c.time}
                 </span>
                 <span className="text-green">

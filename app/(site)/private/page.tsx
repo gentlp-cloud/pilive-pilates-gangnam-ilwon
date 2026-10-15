@@ -81,7 +81,7 @@ export default async function PrivatePage() {
           <ol className="grid gap-4">
             {p.points.map((pt, i) => (
               <li key={pt.title} className="grid grid-cols-[auto_1fr] gap-5 rounded-2xl bg-cream p-6 md:p-7">
-                <span className="font-latin text-[34px] leading-none text-gold tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-latin text-[34px] leading-none text-gold lining-nums tabular-nums">{String(i + 1).padStart(2, '0')}</span>
                 <span className="grid gap-2">
                   <span className="font-display text-[19px] leading-snug text-green">{pt.title}</span>
                   {pt.body ? <span className="text-[14.5px] leading-[1.8] text-muted">{pt.body}</span> : null}

@@ -207,7 +207,7 @@ function ProfileSheet({
           <button type="button" onClick={() => onNav(-1)} className="min-h-11 rounded-full px-4 text-[14px] text-green hover:bg-sand">
             <span aria-hidden="true">←</span> 이전 강사
           </button>
-          <span className="text-[12px] text-muted tabular-nums">
+          <span className="text-[12px] text-muted lining-nums tabular-nums">
             {(items.indexOf(ins) ?? 0) + 1} / {items.length}
           </span>
           <button type="button" onClick={() => onNav(1)} className="min-h-11 rounded-full px-4 text-[14px] text-green hover:bg-sand">

@@ -46,10 +46,10 @@ function Hero({ c }: { c: BrandContent }) {
       {/* 사진은 밝게 두고, 글씨가 놓이는 아래쪽만 부드럽게 어둡게 */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_top,rgb(15_46_35/0.86)_0%,rgb(15_46_35/0.55)_30%,rgb(15_46_35/0.12)_56%,transparent_70%)] md:bg-[linear-gradient(to_top,rgb(15_46_35/0.78)_0%,rgb(15_46_35/0.35)_38%,transparent_62%)]"
+        className="absolute inset-0 bg-[linear-gradient(to_top,rgb(15_46_35/0.88)_0%,rgb(15_46_35/0.62)_34%,rgb(15_46_35/0.32)_52%,rgb(15_46_35/0.08)_66%,transparent_76%)] md:bg-[linear-gradient(to_top,rgb(15_46_35/0.78)_0%,rgb(15_46_35/0.35)_38%,transparent_62%)]"
       />
-      <div className="wrap relative z-10 grid gap-6 pt-28 pb-[calc(112px+env(safe-area-inset-bottom))] text-cream md:pb-20">
-        <p className="font-latin text-[13px] tracking-[0.3em] text-gold-light">{h.slogan}</p>
+      <div className="wrap relative z-10 grid gap-6 pt-28 pb-[calc(112px+env(safe-area-inset-bottom))] text-cream [text-shadow:0_1px_14px_rgb(15_46_35/0.35)] md:pb-20">
+        <p className="font-latin text-[13px] font-semibold tracking-[0.3em] text-gold-light">{h.slogan}</p>
         <h1 id="hero-title" className="text-[clamp(32px,8.8vw,64px)] leading-[1.28] font-normal">
           <Title text={h.title} className="on-dark" />
         </h1>
@@ -79,7 +79,7 @@ function About({ c }: { c: BrandContent }) {
           <ol className="grid gap-px overflow-hidden rounded-xl border border-line bg-line">
             {a.services.map((sv, i) => (
               <li key={sv.title} className="flex gap-5 bg-cream p-5">
-                <span className="font-latin text-[22px] leading-none text-gold tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-latin text-[22px] leading-none text-gold lining-nums tabular-nums">{String(i + 1).padStart(2, '0')}</span>
                 <span className="grid gap-1">
                   <span className="font-display text-[18px] text-green">{sv.title}</span>
                   <span className="text-[14px] leading-relaxed text-muted">{sv.body}</span>
@@ -139,7 +139,7 @@ function FeatureCard({ f, c }: { f: Feature; c: BrandContent }) {
       <div className="grid content-start gap-4 p-6 md:p-8">
         {stat ? (
           <p className="flex items-baseline gap-2 text-green">
-            <span className="font-latin text-[46px] leading-none font-medium tabular-nums">{stat}</span>
+            <span className="font-latin text-[46px] leading-none font-medium lining-nums tabular-nums">{stat}</span>
             <span className="text-[13px] text-muted">{f.statLabel}</span>
           </p>
         ) : null}
@@ -221,7 +221,7 @@ function Bodycare({ c }: { c: BrandContent }) {
           <ol className="grid">
             {b.items.map((it, i) => (
               <li key={it} className="flex items-center gap-5 border-b border-line py-4 first:border-t">
-                <span className="font-latin text-[15px] text-gold tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-latin text-[15px] text-gold lining-nums tabular-nums">{String(i + 1).padStart(2, '0')}</span>
                 <span className="text-[16px] text-green">{it}</span>
               </li>
             ))}
@@ -293,7 +293,7 @@ function Notices({ c }: { c: BrandContent }) {
               <details className="group py-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
                   <span className="grid gap-1">
-                    {n.date ? <span className="text-[12px] text-gold tabular-nums">{n.date}</span> : null}
+                    {n.date ? <span className="text-[12px] text-gold lining-nums tabular-nums">{n.date}</span> : null}
                     <span className="text-[16px] text-green">{n.title}</span>
                   </span>
                   <span aria-hidden="true" className="text-gold transition-transform group-open:rotate-45">

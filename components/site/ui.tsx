@@ -124,7 +124,7 @@ const VARIANT: Record<Variant, string> = {
 };
 
 export function btnClass(variant: Variant = 'green', extra = '') {
-  return `inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-7 text-[15px] font-medium transition-colors duration-300 ${VARIANT[variant]} ${extra}`;
+  return `inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-7 py-3 text-center text-[15px] leading-snug font-medium transition-colors duration-300 ${VARIANT[variant]} ${extra}`;
 }
 
 export function LinkButton({
