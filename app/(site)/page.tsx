@@ -46,10 +46,10 @@ function Hero({ c }: { c: BrandContent }) {
       {/* 사진은 밝게 두고, 글씨가 놓이는 아래쪽만 부드럽게 어둡게 */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_top,rgb(15_46_35/0.88)_0%,rgb(15_46_35/0.62)_34%,rgb(15_46_35/0.32)_52%,rgb(15_46_35/0.08)_66%,transparent_76%)] md:bg-[linear-gradient(to_top,rgb(15_46_35/0.78)_0%,rgb(15_46_35/0.35)_38%,transparent_62%)]"
+        className="absolute inset-0 bg-[linear-gradient(to_top,rgb(15_46_35/0.88)_0%,rgb(15_46_35/0.66)_34%,rgb(15_46_35/0.48)_52%,rgb(15_46_35/0.22)_66%,transparent_80%)] md:bg-[linear-gradient(to_top,rgb(15_46_35/0.78)_0%,rgb(15_46_35/0.35)_38%,transparent_62%)]"
       />
       <div className="wrap relative z-10 grid gap-6 pt-28 pb-[calc(112px+env(safe-area-inset-bottom))] text-cream [text-shadow:0_1px_14px_rgb(15_46_35/0.35)] md:pb-20">
-        <p className="font-latin text-[13px] font-semibold tracking-[0.3em] text-gold-light">{h.slogan}</p>
+        <p className="font-latin text-[13px] font-semibold tracking-[0.3em] text-cream">{h.slogan}</p>
         <h1 id="hero-title" className="text-[clamp(32px,8.8vw,64px)] leading-[1.28] font-normal">
           <Title text={h.title} className="on-dark" />
         </h1>
