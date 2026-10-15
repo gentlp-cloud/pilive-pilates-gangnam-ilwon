@@ -6,7 +6,7 @@ import { logout, saveSite, uploadImage } from './actions';
 
 type Status = { kind: 'idle' | 'ok' | 'err' | 'dirty'; text: string };
 
-function Field({
+export function Field({
   label,
   hint,
   value,
@@ -36,7 +36,7 @@ function Field({
   );
 }
 
-function ImageField({
+export function ImageField({
   label,
   value,
   onChange,
@@ -90,7 +90,7 @@ function ImageField({
   );
 }
 
-function Panel({ title, sub, children, open }: { title: string; sub?: ReactNode; children: ReactNode; open?: boolean }) {
+export function Panel({ title, sub, children, open }: { title: string; sub?: ReactNode; children: ReactNode; open?: boolean }) {
   return (
     <details className="panel" open={open}>
       <summary>
@@ -102,9 +102,9 @@ function Panel({ title, sub, children, open }: { title: string; sub?: ReactNode;
   );
 }
 
-const TITLE_HINT = '엔터로 줄바꿈, *단어*처럼 별표로 감싸면 금색으로 강조됩니다.';
+export const TITLE_HINT = '엔터로 줄바꿈, *단어*처럼 별표로 감싸면 금색으로 강조됩니다.';
 
-export default function AdminEditor({ initial, storageOk }: { initial: SiteContent; storageOk: boolean }) {
+export default function AdminEditor({ initial, storageOk, tabs }: { initial: SiteContent; storageOk: boolean; tabs?: ReactNode }) {
   const [c, setC] = useState<SiteContent>(initial);
   const [status, setStatus] = useState<Status>({ kind: 'idle', text: '수정한 뒤 저장 버튼을 눌러 주세요.' });
   const [pending, start] = useTransition();
@@ -140,8 +140,9 @@ export default function AdminEditor({ initial, storageOk }: { initial: SiteConte
       <div className="adm-top">
         <div className="wrap">
           <b>PILIVE ADMIN</b>
+          {tabs}
           <div className="links">
-            <a className="adm-btn ghost small" href="/" target="_blank" rel="noopener">
+            <a className="adm-btn ghost small" href="/bodycare" target="_blank" rel="noopener">
               사이트 보기
             </a>
             <form action={logout}>
@@ -161,7 +162,7 @@ export default function AdminEditor({ initial, storageOk }: { initial: SiteConte
           </div>
         ) : null}
         <p className="adm-intro">
-          항목을 눌러 펼친 뒤 수정하고, 화면 아래의 <b>저장하기</b>를 누르면 사이트에 바로 반영됩니다.
+          지금 수정 중인 페이지: <b>PILIVE BODY CARE SYSTEM (/bodycare)</b>. 항목을 눌러 펼친 뒤 수정하고, 화면 아래의 <b>저장하기</b>를 누르면 사이트에 바로 반영됩니다.
         </p>
 
         <Panel title="예약 링크 · 오시는 길" open>
@@ -169,7 +170,7 @@ export default function AdminEditor({ initial, storageOk }: { initial: SiteConte
             id="loc-url"
             type="url"
             label="네이버 예약 링크"
-            hint="https:// 로 시작하는 주소를 붙여넣으세요. 사이트의 모든 예약 버튼이 이 링크로 연결됩니다. 비워두면 '예약 링크 준비 중'으로 보입니다."
+            hint="https:// 로 시작하는 주소를 붙여넣으세요. 바디케어 페이지(/bodycare)의 예약 버튼이 이 링크로 연결됩니다. 브랜드 홈페이지의 예약 링크는 '브랜드 홈페이지' 탭에서 따로 설정합니다."
             value={c.location.url}
             onChange={(v) => update((d) => (d.location.url = v))}
           />

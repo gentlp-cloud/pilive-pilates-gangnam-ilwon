@@ -1,0 +1,119 @@
+/* PILIVE 브랜드 홈페이지 스타일 — 강사 프로필의 딥그린 · 아이보리 · 샴페인 골드를 기준으로 합니다.
+   (바디케어 페이지 /bodycare 는 별도의 스타일 파일을 사용합니다.) */
+@import 'tailwindcss';
+
+@theme {
+  --color-green: #173f31;
+  --color-green-deep: #0f2e23;
+  --color-green-soft: #2c5545;
+  --color-ivory: #f6f1e7;
+  --color-cream: #fcfaf5;
+  --color-sand: #ebe3d4;
+  --color-gold: #a8875a;
+  --color-gold-soft: #d6c4a0;
+  --color-gold-light: #e9dcc0;
+  --color-ink: #1d2622;
+  --color-muted: #5d655f;
+  --color-line: rgb(23 63 49 / 0.14);
+
+  --font-display: 'Hahmlet', 'Noto Serif KR', serif;
+  --font-latin: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+  }
+  .eyebrow {
+    font-family: var(--font-latin);
+    font-size: 13px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 1px;
+    background: var(--color-gold-soft);
+  }
+  .eyebrow.center {
+    justify-content: center;
+  }
+  .eyebrow.center::after {
+    content: '';
+    width: 26px;
+    height: 1px;
+    background: var(--color-gold-soft);
+  }
+  .rich em {
+    font-style: normal;
+    color: var(--color-gold);
+  }
+  .on-dark .rich em,
+  .rich.on-dark em {
+    color: var(--color-gold-light);
+  }
+  /* 강사 프로필의 금색 물결 선 */
+  .gold-wave {
+    display: block;
+    width: 120px;
+    height: 14px;
+    color: var(--color-gold);
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

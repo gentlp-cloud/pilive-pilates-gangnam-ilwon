@@ -23,7 +23,7 @@ function Head({ s, style }: { s: Section; style?: CSSProperties }) {
 
 function Logo({ url }: { url: string }) {
   return (
-    <a className="logo" href="#home" aria-label="필라이브필라테스 홈">
+    <a className="logo" href="/" aria-label="필라이브필라테스 홈페이지로 이동">
       {url ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={url} alt="PILIVE PILATES" />
