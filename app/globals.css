@@ -488,3 +488,11 @@ footer .note{border-top:1px solid var(--line);padding-top:22px;line-height:1.8}
   .bc-card-wide{grid-column:span 3;grid-template-columns:1.6fr 1fr}
 }
 .bc-progress .reveal,.bc-care .reveal{will-change:auto}
+
+/* AI 연출 상담 장면 */
+.bc-scene{margin:clamp(40px,6vw,72px) auto 0;max-width:980px}
+.bc-scene img{display:block;width:100%;height:auto;border-radius:18px;aspect-ratio:3/2;object-fit:cover}
+.bc-scene figcaption{margin-top:14px;font-size:13px;line-height:1.7;color:var(--muted)}
+.bc-scene figcaption strong{display:block;font-size:16px;color:var(--ink,inherit);margin-bottom:2px}
+.bc-analysis .bc-scene figcaption{color:#A9A296}
+.bc-analysis .bc-scene figcaption strong{color:#F4EFE6}

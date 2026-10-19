@@ -158,6 +158,14 @@ export default function BodyCare({ book, firstId = 'intro' }: { book: (label: st
               </div>
             </article>
           </div>
+          <figure className="bc-scene reveal">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`${OB}/scene-result-consult.webp`} alt="강사가 측정 결과지를 짚으며 회원에게 설명하는 결과 상담 장면 (AI 연출 이미지)" width={1536} height={1024} loading="lazy" decoding="async" />
+            <figcaption>
+              <strong>결과 상담</strong>
+              측정이 끝나면 결과지를 함께 보며 현재 상태와 운동 방향을 설명드립니다. · AI로 연출한 이미지이며, 실제 강사·회원이 아닙니다.
+            </figcaption>
+          </figure>
           <p className="bc-note bc-note-light">화면은 제조사 피트릭스(아웃바디)의 공식 예시 화면이며, 실제 회원의 측정 결과가 아닙니다.</p>
         </div>
       </section>
@@ -255,6 +263,14 @@ export default function BodyCare({ book, firstId = 'intro' }: { book: (label: st
               </li>
             </ol>
           </div>
+          <figure className="bc-scene reveal">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`${OB}/scene-progress-consult.webp`} alt="강사와 회원이 태블릿으로 이전 측정 결과와 변화를 함께 확인하는 변화관리 상담 장면 (AI 연출 이미지)" width={1536} height={1024} loading="lazy" decoding="async" />
+            <figcaption>
+              <strong>변화관리 상담</strong>
+              재측정 후에는 이전 결과와 비교하며 변화를 확인하고 다음 목표를 함께 정합니다. · AI로 연출한 이미지이며, 실제 강사·회원이 아닙니다.
+            </figcaption>
+          </figure>
           <p className="bc-note bc-note-light">변화의 정도와 속도는 사람마다 다르며, 결과는 효과를 보장하지 않습니다.</p>
         </div>
       </section>
