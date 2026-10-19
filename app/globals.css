@@ -373,3 +373,118 @@ footer .note{border-top:1px solid var(--line);padding-top:22px;line-height:1.8}
   .band-full{align-items:center}
   .band-full .sec-head{max-width:520px}
 }
+
+/* =====================================================================
+   PILIVE BODY CARE SYSTEM — 리디자인 (스튜디오 우드·아이보리 + 분석 화면 차콜)
+   ===================================================================== */
+:root{--char:#1E1C1A;--char-2:#2A2724;--wood:#B08F63;--wood-deep:#7C5F3A}
+.hero h1 em,.bc-intro h2 em,.bc-final h2 em{font-style:normal;color:var(--gold)}
+.bc-head{display:grid;gap:22px;margin-bottom:clamp(40px,7vw,72px);max-width:760px}
+.bc-kicker{display:flex;align-items:center;gap:14px;font-family:var(--f-latin);font-size:13px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase}
+.bc-kicker .num{font-size:20px;letter-spacing:.08em;color:var(--wood-deep)}
+.bc-head h2{font-size:clamp(28px,6.6vw,50px);line-height:1.3}
+.bc-note{font-size:12px;color:var(--muted);margin-top:14px;display:flex;gap:8px;align-items:center}
+.bc-note::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-soft);flex:none}
+.bc-note-light{color:#A9A194;margin-top:34px}
+.bc-small{font-size:13px;color:var(--muted)}
+.bc-label{font-family:var(--f-latin);letter-spacing:.2em;font-size:13px;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+
+/* zoom button & modal */
+.zoom-open{position:relative;display:block;width:100%;padding:0;border:0;background:var(--sand);cursor:zoom-in;border-radius:6px;overflow:hidden;font:inherit;color:inherit}
+.zoom-open img{width:100%;height:auto;display:block}
+.zoom-hint{position:absolute;right:12px;bottom:12px;background:rgba(30,28,26,.78);color:#F7F3EC;font-size:12px;letter-spacing:.04em;padding:7px 13px;border-radius:999px;backdrop-filter:blur(6px)}
+.zoom-modal{position:fixed;inset:0;z-index:100;display:grid;grid-template-rows:1fr auto;background:rgba(18,17,15,.94)}
+.zoom-bg{position:absolute;inset:0;border:0;background:transparent;cursor:zoom-out}
+.zoom-stage{position:relative;z-index:1;overflow:auto;display:grid;place-items:center;padding:56px 12px 8px;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom;pointer-events:none}
+.zoom-stage img{pointer-events:auto;max-width:100%;max-height:calc(100svh - 120px);width:auto;height:auto;object-fit:contain;cursor:zoom-in;border-radius:4px}
+.zoom-stage.is-full{place-items:start center}
+.zoom-stage.is-full img{max-width:none;max-height:none;width:min(220%,2200px);cursor:zoom-out}
+.zoom-close{position:absolute;z-index:3;top:max(10px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,243,236,.4);background:rgba(30,28,26,.7);color:#F7F3EC;font-size:26px;line-height:1;cursor:pointer}
+.zoom-cap{position:relative;z-index:2;text-align:center;color:#CFC7BA;font-size:12.5px;padding:8px 16px calc(14px + env(safe-area-inset-bottom));pointer-events:none}
+.zoom-cap span{color:#8E877B}
+
+/* INTRO (charcoal) */
+.bc-intro{background:var(--char);color:var(--ivory);padding-block:clamp(72px,12vw,130px)}
+.bc-intro .bc-kicker{color:var(--wood)}
+.bc-intro .bc-kicker .num{color:var(--wood)}
+.bc-intro .lead{color:#CFC7BA}
+.bc-device{margin:0;display:grid;gap:14px}
+.bc-device .zoom-open{background:transparent}
+.bc-device figcaption{font-size:12px;color:#8E877B;text-align:center}
+
+/* 01 ASSESSMENT (ivory) */
+.bc-assess{background:var(--ivory)}
+.bc-assess-grid{display:grid;gap:36px;align-items:center}
+.bc-assess-photo .zoom-open{max-width:520px;margin-inline:auto}
+.bc-six{list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.bc-six li{display:flex;gap:14px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--line);font-family:var(--f-display);font-size:19px}
+.bc-six .num{font-size:14px;color:var(--gold);letter-spacing:.1em}
+.bc-stats{display:flex;gap:40px;margin-bottom:18px}
+.bc-stats div{display:grid;gap:2px}
+.bc-stats strong{font-family:var(--f-latin);font-weight:400;font-size:54px;line-height:1}
+.bc-stats strong sup{font-size:18px;margin-left:3px}
+.bc-stats span{font-size:13px;color:var(--muted)}
+.bc-process{margin-top:clamp(56px,9vw,96px)}
+.bc-process .process-track{padding-bottom:14px}
+
+/* 02 ANALYSIS (charcoal, big cards) */
+.bc-analysis{background:var(--char);color:var(--ivory)}
+.bc-analysis .bc-kicker,.bc-analysis .bc-kicker .num{color:var(--wood)}
+.bc-analysis .lead{color:#CFC7BA}
+.bc-cards{display:grid;gap:18px}
+.bc-card{background:var(--char-2);border:1px solid rgba(247,243,236,.1);border-radius:8px;overflow:hidden;display:grid;align-content:start}
+.bc-card .zoom-open{border-radius:0;background:#000}
+.bc-card-body{padding:22px 22px 26px;display:grid;gap:10px}
+.bc-tag{font-family:var(--f-latin);font-size:13px;letter-spacing:.22em;color:var(--wood)}
+.bc-card h3{font-size:20px;color:var(--ivory)}
+.bc-card p{font-size:14.5px;color:#BDB5A8;line-height:1.8}
+
+/* 03 PERSONALIZED CARE (ivory) */
+.bc-care{background:var(--sand)}
+.bc-care-grid{display:grid;gap:40px}
+.bc-care-photo{margin:0;align-self:start}
+.bc-care-photo img{width:100%;height:auto;border-radius:999px 999px 6px 6px;aspect-ratio:4/5;object-fit:cover;max-width:460px;margin-inline:auto}
+.bc-care-photo figcaption,.bc-app figcaption,.bc-compare figcaption{font-size:12px;color:var(--muted);margin-top:12px}
+.bc-care-photo figcaption{text-align:center}
+.bc-points{list-style:none;margin:0 0 36px;padding:0;border-top:1px solid var(--line)}
+.bc-points li{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:22px 0;border-bottom:1px solid var(--line)}
+.bc-points .num{font-size:18px;color:var(--wood-deep)}
+.bc-points strong{display:block;font-family:var(--f-display);font-weight:400;font-size:19px;margin-bottom:6px}
+.bc-points p{font-size:14.5px;color:var(--muted)}
+.bc-app{margin:0}
+
+/* 04 PROGRESS (ivory → charcoal accent) */
+.bc-progress{background:var(--ivory)}
+.bc-progress-grid{display:grid;gap:36px;align-items:start}
+.bc-compare{margin:0}
+.bc-loop{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:l}
+.bc-loop li{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--line);position:relative}
+.bc-loop li:first-child{border-top:1px solid var(--line)}
+.bc-loop .num{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--char);color:var(--ivory);font-size:14px}
+.bc-loop strong{display:block;font-family:var(--f-display);font-weight:400;font-size:19px}
+.bc-loop p{font-size:14.5px;color:var(--muted)}
+
+/* FINAL */
+.bc-final{padding-block:clamp(110px,16vw,180px);color:var(--ivory);background:var(--char)}
+.bc-final .shade{background:linear-gradient(90deg,rgba(28,26,23,.88) 0%,rgba(28,26,23,.66) 55%,rgba(28,26,23,.36) 100%)}
+.bc-final .bc-kicker,.bc-final .bc-kicker .num{color:var(--gold-soft)}
+.bc-final h2{font-size:clamp(30px,7.2vw,56px);line-height:1.3;margin:22px 0 22px}
+.bc-final-lead{color:rgba(247,243,236,.86);font-size:15px;margin-bottom:34px;max-width:32em}
+.bc-final .btn-dark{background:var(--ivory);color:var(--ink)}
+.bc-final .btn-dark:hover{background:#fff}
+
+@media (min-width:720px){
+  .bc-cards{grid-template-columns:1fr 1fr}
+  .bc-card-wide{grid-column:1/-1;grid-template-columns:1.5fr 1fr;align-items:center}
+  .bc-card-wide .bc-card-body{padding:32px}
+}
+@media (min-width:980px){
+  .bc-device{max-width:980px;margin-inline:auto;margin-top:clamp(-24px,-2vw,0px)}
+  .bc-assess-grid{grid-template-columns:1fr 1fr;gap:90px}
+  .bc-care-grid{grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
+  .bc-care-photo{position:sticky;top:110px}
+  .bc-progress-grid{grid-template-columns:1.3fr 1fr;gap:80px;align-items:center}
+  .bc-cards{grid-template-columns:repeat(3,1fr)}
+  .bc-card-wide{grid-column:span 3;grid-template-columns:1.6fr 1fr}
+}
+.bc-progress .reveal,.bc-care .reveal{will-change:auto}
